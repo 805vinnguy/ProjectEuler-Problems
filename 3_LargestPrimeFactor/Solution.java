@@ -11,6 +11,31 @@ public class Solution {
         int t = in.nextInt();
         for(int a0 = 0; a0 < t; a0++){
             long n = in.nextLong();
+            int f = 3;
+
+            while(n % 2 == 0) {
+                n /= 2;
+            }
+            if(n == 1) {
+                System.out.println("2");
+                return;
+            }
+            while(f * f <= n) {
+                if(n % f == 0) {
+                    n /= f;
+                    f = 3;
+                    continue;
+                }
+                else {
+                    f += 2;
+                }
+            }
+            if(n > 2) {
+                System.out.println(n + "");
+            }
+            else {
+                System.out.println(f + "");
+            }
         }
     }
 }
