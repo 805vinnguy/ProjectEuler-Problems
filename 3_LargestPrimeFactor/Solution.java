@@ -13,7 +13,15 @@ public class Solution {
             long n = in.nextLong();
             int f = 3;
 
-            while(n % 2 == 0) {
+            if(n == 0) {
+                System.out.println("0");
+                return;
+            }
+            if(n == 1) {
+                System.out.println("1");
+                return;
+            }
+            while(n > 0 && n % 2 == 0) {
                 n /= 2;
             }
             if(n == 1) {
